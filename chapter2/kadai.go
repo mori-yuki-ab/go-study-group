@@ -50,7 +50,7 @@ Numbers is ...
 */
 func Numbers() []Number {
 	// TODO Q2
-	slice := make([]Number, 3)
+	slice := make([]Number, 0, 3)
 	slice = append(slice, Number{1}, Number{2}, Number{3})
 	return slice
 }
@@ -96,7 +96,7 @@ ex) 引数:[]slice{21,21,4,5} 戻り値:[]int{21,4,5}
 func Unique(slice []int) []int {
 	// TODO Q5
 	results := make([]int, 0, len(slice))
-	encountered := map[int]bool{}
+	encountered := make(map[int]bool)
 	for i := 0; i < len(slice); i++ {
 		if !encountered[slice[i]] {
 			encountered[slice[i]] = true
