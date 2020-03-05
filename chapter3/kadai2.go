@@ -1,5 +1,6 @@
 package chapter3
 
+// Kadai2 is ...
 // 課題2
 // Goの言語仕様にはコンストラクタの機能は存在しません。
 // しかし慣習的にNew[struct名]の関数を実装してstructの初期化とそのポインタ返却します。
@@ -8,4 +9,12 @@ package chapter3
 type Kadai2 struct {
 	id   int
 	name string
+}
+
+// NewKadai2 is ...
+func NewKadai2(id int, name string) *Kadai2 {
+	return &Kadai2{
+		id:   id,
+		name: name,
+	}
 }
