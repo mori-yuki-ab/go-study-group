@@ -65,6 +65,9 @@ func main() {
 		Handler: mux,
 	}
 
+	// seedを更新
+	rand.Seed(time.Now().UnixNano())
+
 	// OSからのシグナルを待つ
 	go func() {
 		// SIGTERM: コンテナが終了する時に送信されるシグナル
@@ -98,6 +101,5 @@ func main() {
 // おみくじを引く
 func DrawFortune() string {
 	fortune := []string{"大吉", "中吉", "吉", "凶"}
-	rand.Seed(time.Now().UnixNano())
 	return fortune[rand.Intn(len(fortune))]
 }
